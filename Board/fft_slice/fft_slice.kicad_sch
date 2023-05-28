@@ -1,0 +1,82 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 5b7626ac-3f35-4d36-86ca-9a7c84ad652e)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 144.78 35.56) (size 30.48 27.94) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 3a2e401f-64c8-4591-9b32-6cbed7082031)
+    (property "Sheetname" "Analog" (at 144.78 34.8484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "analog.kicad_sch" (at 144.78 64.0846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "fft_slice"
+        (path "/5b7626ac-3f35-4d36-86ca-9a7c84ad652e" (page "4"))
+      )
+    )
+  )
+
+  (sheet (at 102.87 73.66) (size 34.29 25.4) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 63959a05-8dc0-4e6b-a632-abaae8c8bb0c)
+    (property "Sheetname" "Headers" (at 102.87 72.9484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "headers.kicad_sch" (at 102.87 99.6446 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "fft_slice"
+        (path "/5b7626ac-3f35-4d36-86ca-9a7c84ad652e" (page "5"))
+      )
+    )
+  )
+
+  (sheet (at 64.77 35.56) (size 30.48 27.94) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 91647dbe-4d9c-4c7d-9e57-67bf52e76575)
+    (property "Sheetname" "Power_Supply" (at 64.77 34.8484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "untitled.kicad_sch" (at 64.77 64.0846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "fft_slice"
+        (path "/5b7626ac-3f35-4d36-86ca-9a7c84ad652e" (page "2"))
+      )
+    )
+  )
+
+  (sheet (at 102.87 35.56) (size 34.29 27.94) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid e96d57dd-2f40-4897-af44-3668c583a1f8)
+    (property "Sheetname" "MCU" (at 102.87 34.8484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "mcu.kicad_sch" (at 102.87 64.0846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "fft_slice"
+        (path "/5b7626ac-3f35-4d36-86ca-9a7c84ad652e" (page "3"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)

@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "mcp6s22.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -34,18 +34,7 @@ __IO uint8_t ubSelectedWavesForm = 1;
 const uint8_t aEscalator8bit[6] = {0x0, 0x33, 0x66, 0x99, 0xCC, 0xFF};
 
  //spi
-#define PGA_WRITE_TO_GAIN 0x40
-#define PGA_WRITE_TO_CHANNEL 0x41
-#define PGA_SEL_GAIN_1  0x00
-#define PGA_SEL_GAIN_2  0x01
-#define PGA_SEL_GAIN_4  0x02
-#define PGA_SEL_GAIN_5  0x03
-#define PGA_SEL_GAIN_8  0x04
-#define PGA_SEL_GAIN_10 0x05
-#define PGA_SEL_GAIN_16 0x06
-#define PGA_SEL_GAIN_32 0x07
-#define PGA_SEL_CH_0 0x00
-#define PGA_SEL_CH_1 0x01
+
 
 /* USER CODE END PTD */
 
@@ -143,15 +132,15 @@ int main(void)
  uint8_t spi_data_tx[2];
 
  //select CH1 with PGA 1
- HAL_GPIO_WritePin(PGA_N_CS_GPIO_Port, PGA_N_CS_Pin, GPIO_PIN_RESET);
- spi_data_tx[0] = PGA_WRITE_TO_GAIN;
- spi_data_tx[1] = PGA_SEL_GAIN_1;
- HAL_SPI_Transmit(&hspi1, spi_data_tx, 2, HAL_MAX_DELAY);
-
- spi_data_tx[0] = PGA_WRITE_TO_CHANNEL;
- spi_data_tx[1] = PGA_SEL_CH_0; // ch0 is DAC
- HAL_SPI_Transmit(&hspi1, spi_data_tx, 2, HAL_MAX_DELAY);
- HAL_GPIO_WritePin(PGA_N_CS_GPIO_Port, PGA_N_CS_Pin, GPIO_PIN_SET);
+// HAL_GPIO_WritePin(PGA_N_CS_GPIO_Port, PGA_N_CS_Pin, GPIO_PIN_RESET);
+// spi_data_tx[0] = PGA_WRITE_TO_GAIN;
+// spi_data_tx[1] = PGA_SEL_GAIN_1;
+// HAL_SPI_Transmit(&hspi1, spi_data_tx, 2, HAL_MAX_DELAY);
+//
+// spi_data_tx[0] = PGA_WRITE_TO_CHANNEL;
+// spi_data_tx[1] = PGA_SEL_CH_0; // ch0 is DAC
+// HAL_SPI_Transmit(&hspi1, spi_data_tx, 2, HAL_MAX_DELAY);
+// HAL_GPIO_WritePin(PGA_N_CS_GPIO_Port, PGA_N_CS_Pin, GPIO_PIN_SET);
 
 
  //select ext channel - both with dc oiffset half
