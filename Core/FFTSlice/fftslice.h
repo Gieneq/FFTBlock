@@ -1,5 +1,7 @@
 #pragma once
 #include "stm32g0xx.h"
+
+#include "sig_generator.h"
 #include "ts5a9411.h"
 #include "mcp6s22.h"
 
@@ -32,6 +34,7 @@ typedef struct fftslice_t {
 	ts5a9411_t selector;
 	fftslice_signal_source_t source_signal;
 	fftslice_gain_t gain;
+	sig_generator_t generator;
 } fftslice_t;
 
 
