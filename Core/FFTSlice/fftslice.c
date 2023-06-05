@@ -13,6 +13,9 @@ void fftslice_init(fftslice_t* fftslice, fftslice_config_t* config) {
 	MCP6S22_init(&fftslice->amplifier, config->mcp6s22_spi, config->mcp6s22_ncs_port, config->mcp6s22_ncs_pin);
 	sig_generator_init(&fftslice->generator, &hdac1);
 
+	HAL_StatusTypeDef res;
+	res = HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)fftslice->generator.sig_buffer, SIG_GENERATOR_SINE_SAMPLES_COUNT, DAC_ALIGN_12B_R);
+
 	/* Init registers */
 }
 

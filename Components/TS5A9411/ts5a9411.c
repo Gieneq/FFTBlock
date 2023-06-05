@@ -1,4 +1,4 @@
-#include "ts5a9411.h"
+#include <ts5a9411.h>
 
 void TS6A9411_init(ts5a9411_t* ts_switch, GPIO_TypeDef* select_sig_port, uint16_t select_sig_pin) {
 	ts_switch->select_sig_port = select_sig_port;

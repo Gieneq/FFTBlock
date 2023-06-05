@@ -1,9 +1,9 @@
 #pragma once
 #include "stm32g0xx.h"
+#include <mcp6s22.h>
+#include <sig_generator.h>
+#include <ts5a9411.h>
 
-#include "sig_generator.h"
-#include "ts5a9411.h"
-#include "mcp6s22.h"
 
 
 typedef enum fftslice_signal_source_t {

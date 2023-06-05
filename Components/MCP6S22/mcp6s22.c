@@ -1,4 +1,4 @@
-#include "mcp6s22.h"
+#include <mcp6s22.h>
 
 #define MCP6S22_WRITE_TO_CHANNEL 0x41
 #define MCP6S22_WRITE_TO_GAIN 0x40

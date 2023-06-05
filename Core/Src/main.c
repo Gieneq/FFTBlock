@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "dma.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -46,7 +47,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+fftslice_t fftslice;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -89,12 +90,22 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_ADC1_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
   MX_USART2_UART_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
+
+  fftslice_config_t fftslice_config;
+  fftslice_config.mcp6s22_ncs_pin = PGA_N_CS_Pin;
+  fftslice_config.mcp6s22_ncs_port = PGA_N_CS_GPIO_Port;
+  fftslice_config.mcp6s22_spi = &hspi1;
+  fftslice_config.ts5a9411_select_sig_pin = EXT_SIG_SELECT_Pin;
+  fftslice_config.ts5a9411_select_sig_port = EXT_SIG_SELECT_GPIO_Port;
+
+  fftslice_init(&fftslice, &fftslice_config);
 
   /* USER CODE END 2 */
 
