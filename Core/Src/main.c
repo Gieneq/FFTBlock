@@ -111,7 +111,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
- int dev_blink_last_tick = 0;
+// int dev_blink_last_tick = 0;
   while (1)
   {
 //	HAL_
