@@ -28,6 +28,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "fftslice.h"
+#include "dac_sines.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -111,12 +113,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-// int dev_blink_last_tick = 0;
+ int freq_index = 0;
   while (1)
   {
-//	HAL_
 	 HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-	 HAL_Delay(200);
+	 HAL_Delay(2000);
+
+	 if(freq_index >= DAC_FREQ_STEPS) {
+		 freq_index = 0;
+	 }
+	 sig_generator_set(&fftslice.generator, freq_index);
+	 ++freq_index;
 
     /* USER CODE END WHILE */
 

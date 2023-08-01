@@ -26,3 +26,4 @@ typedef struct sig_generator_t {
 } sig_generator_t;
 
 int sig_generator_init(sig_generator_t* generator, DAC_HandleTypeDef* dac_handle, TIM_HandleTypeDef* tim_handle);
+void sig_generator_set(sig_generator_t* generator, int frequency_index);
